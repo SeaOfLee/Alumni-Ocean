@@ -1,0 +1,25 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+    <h1>Users#edit</h1>
+    <p>Find me in app/views/users/edit.html.erb</p>
+
+    <%= render 'form' %>
+
+    <%= link_to 'View', @user %> |
+    <%= link_to 'Back', users_path %> |
+
+    <hr>
+    Current User ID: <%= session["user_id"].inspect %><br>
+    <%= params.inspect %>
+    <br>
+    <% if current_user != nil %>
+    Logged in as: <%= current_user.email %> |
+    <!-- method delete overrides button's normal behavior of POST -->
+      <%= link_to "Log Out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', new_sessions_path %>
+    <% end %>
+
+</div>

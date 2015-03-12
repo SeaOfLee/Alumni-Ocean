@@ -1,0 +1,7 @@
+<h1>Comments#edit</h1>
+<p>Find me in app/views/comments/edit.html.erb</p>
+
+  <%= form_for ([@post, @comment]) do |f| %>
+    <%= f.text_area :content %><br />
+    <%= f.submit 'Update comment' %>
+  <% end %>

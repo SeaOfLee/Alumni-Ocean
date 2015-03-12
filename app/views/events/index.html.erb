@@ -1,0 +1,53 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+    <div class='row clearfix'>
+      <div class='column two-fifths'>
+        <%= form_tag search_events_path, method: :get do %>
+          <%= text_field_tag :search, params[:search], :placeholder => "Search in events:" %>
+      </div>
+      <div class='column fifth'>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <h1>Most Recent Events</h1>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <%= link_to "New Event", new_event_path, class: 'button' %>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <% @events.each do |event| %>
+          <h2><%= link_to event.event_name, event, class: 'content_title' %></h2>
+          <p><span class='label'>Date: </span><%= event.event_date %><br />
+             <span class='label'>Location: </span><%= event.event_location %></p>
+             <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
+          <hr />
+        <% end %>
+        <%= will_paginate @events %>
+      </div>
+    </div>
+
+<hr>
+Current User ID: <%= session["user_id"].inspect %><br>
+<%= params.inspect %>
+<br>
+<% if current_user != nil %>
+Logged in as: <%= current_user.email %> |
+<!-- method delete overrides button's normal behavior of POST -->
+  <%= link_to "Log Out", sessions_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', new_sessions_path %>
+<% end %>
+
+</div>

@@ -1,0 +1,28 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+    <h1>Sessions#new</h1>
+    <p>Find me in app/views/sessions/new.html.erb</p>
+
+    <%= form_for @user, url:{ :controller => 'sessions', :action => "create"} do |f| %>
+    <%= f.text_field :email %><br>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Log In", class: 'button' %><br><br>
+    <% end %>
+
+    <%= button_to('Sign Up', new_user_path, method: :get) %>
+
+<hr>
+Current User ID: <%= session["user_id"].inspect %><br>
+<%= params.inspect %>
+<br>
+<% if current_user != nil %>
+Logged in as: <%= current_user.email %> |
+<!-- method delete overrides button's normal behavior of POST -->
+  <%= link_to "Log Out", sessions_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', new_sessions_path %>
+<% end %>
+
+</div>

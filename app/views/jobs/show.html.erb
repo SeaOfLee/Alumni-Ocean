@@ -1,0 +1,62 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <h1><%= @job.job_title %></h1>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column third'>
+        <p><span class='label'>Company:</span> <%= @job.company %></p>
+      </div>
+      <div class='column third'>
+        <p><span class='label'>Job Type:</span> <%= @job.job_type %></p>
+      </div>
+      <div class='column third'>
+        <p><span class='label'>Location:</span> <%= @job.location %></p>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <p><%= simple_format(@job.description) %></p>
+        <p>For more information, email: <%= mail_to @job.contact %>.</a></p>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <hr />
+      </div>
+      <div class='column half'>
+        <span class='post_time'>Posted <%= time_ago_in_words(@job.created_at) %> ago by <%= @job.user.first_name %> <%= @job.user.last_name %></span>
+      </div>
+      <div class='column half'>
+        <span class="edit_delete">
+          <% if current_user == @job.user %>
+            <%= link_to "Edit", edit_job_path(@job) %>
+          <% end %> |
+          <% if current_user == @job.user %>
+            <%= link_to "Delete", job_path(@job), method: :delete, data: { confirm: "Are you sure you want to delete this?" }%>
+          <% end %>
+        </span>
+      </div>
+    </div>
+
+
+    <hr>
+    Current User ID: <%= session["user_id"].inspect %><br>
+    <%= params.inspect %>
+    <br>
+    <% if current_user != nil %>
+    Logged in as: <%= current_user.email %> |
+    <!-- method delete overrides button's normal behavior of POST -->
+      <%= link_to "Log Out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', new_sessions_path %>
+    <% end %>
+
+</div>

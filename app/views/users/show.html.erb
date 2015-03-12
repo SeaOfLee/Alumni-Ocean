@@ -1,0 +1,51 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+    <h1>Welcome, <%= @user.first_name %>.</h1>
+
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+
+    <div class='profile_details'>
+      Pic: <%= image_tag @user.avatar.url %>
+      <ul>
+        <li>
+          Email: <%= @user.email %>
+        </li>
+        <li>
+          Current Location: <%= @user.current_location %>
+        </li>
+        <li>
+          Program: <%= @user.program_attended %>
+        </li>
+        <li>
+          Campus: <%= @user.campus %>
+        </li>
+        <li>
+          Cohort: <%= @user.cohort %>
+        </li>
+        <li>
+          About Me: <%= @user.bio %>
+        </li>
+      </ul>
+    </div>
+
+    <% if current_user == @user %>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <% end %>
+
+    <%= link_to 'Back', users_path %>
+
+    <hr>
+    Current User ID: <%= session["user_id"].inspect %><br>
+    <%= params.inspect %>
+    <br>
+    <% if current_user != nil %>
+    Logged in as: <%= current_user.email %> |
+    <!-- method delete overrides button's normal behavior of POST -->
+      <%= link_to "Log Out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', new_sessions_path %>
+    <% end %>
+
+</div>

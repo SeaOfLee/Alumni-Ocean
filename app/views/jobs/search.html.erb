@@ -1,0 +1,30 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+    <%= form_tag search_jobs_path, method: :get do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <% @jobs.each do |job| %>
+      <h3><%= link_to job.job_title, job %></h3>
+      <p><%= job.company %>, <%= job.location %></p>
+      <p>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></p>
+      <hr />
+    <% end %>
+
+<hr>
+Current User ID: <%= session["user_id"].inspect %><br>
+<%= params.inspect %>
+<br>
+<% if current_user != nil %>
+Logged in as: <%= current_user.email %> |
+<!-- method delete overrides button's normal behavior of POST -->
+  <%= link_to "Log Out", sessions_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', new_sessions_path %>
+<% end %>
+
+</div>

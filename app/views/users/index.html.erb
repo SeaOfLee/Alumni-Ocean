@@ -1,0 +1,52 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+    <%= form_tag search_users_path, method: :get do %>
+          <%= label_tag(:q, "Search for:") %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag("Search") %>
+        <% end %>
+    <h1>GA Alumni List</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Current Location</th>
+          <th>GA Program</th>
+          <th>Campus</th>
+          <th>Cohort</th>
+          <th>Bio</th>
+          <th colspan="6"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |u| %>
+          <tr>
+            <td><%= link_to u.first_name, u %> <%= link_to u.last_name, u %></td>
+            <td><%= u.current_location %></td>
+            <td><%= u.program_attended %></td>
+            <td><%= u.campus %></td>
+            <td><%= u.cohort %></td>
+            <td><%= u.bio %></td>
+            <td><% if u.is_admin == true %><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <hr>
+    Current User ID: <%= session["user_id"].inspect %><br>
+    <%= params.inspect %>
+    <br>
+    <% if current_user != nil %>
+    Logged in as: <%= current_user.email %> |
+    <!-- method delete overrides button's normal behavior of POST -->
+      <%= link_to "Log Out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', new_sessions_path %>
+    <% end %>
+
+</div>

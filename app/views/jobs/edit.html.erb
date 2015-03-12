@@ -1,0 +1,50 @@
+<%= render 'layouts/sidenav' %>
+
+<div class="main_container">
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <h1>Edit Your Job Posting</h1>
+      </div>
+    </div>
+
+    <%= form_for @job do |f| %>
+      <div class='row clearfix'>
+        <div class='column half'><%= f.text_field :job_title, :placeholder => "Enter the job title..." %></div>
+        <div class='column half'><%= f.text_field :company, :placeholder => "Enter the company name..." %></div>
+      </div>
+
+      <div class='row clearfix'>
+          <div class='column full'><%= f.text_field :location, id: 'location', :placeholder => "Enter the job location..." %></div>
+      </div>
+
+      <div class='row clearfix'>
+        <div class='column half'><%= f.text_field :job_type, :placeholder => "Choose the job type..." %></div>
+        <div class='column half'><%= f.text_field :contact, :placeholder => "Enter the contact email.." %></div>
+      </div>
+
+      <div class='row clearfix'>
+          <div class='column full'><%= f.text_area :description, :placeholder => "Give more details about the job here..." %></div>
+      </div>
+
+      <div class='row clearfix'>
+          <div class='column full'><%= f.submit 'Update your job listing', class: 'button'  %> <%= link_to "Cancel", job_path %></div>
+      </div>
+
+    <% end %>
+
+    <%= render 'layouts/places' %>
+
+    <hr>
+    Current User ID: <%= session["user_id"].inspect %><br>
+    <%= params.inspect %>
+    <br>
+    <% if current_user != nil %>
+    Logged in as: <%= current_user.email %> |
+    <!-- method delete overrides button's normal behavior of POST -->
+      <%= link_to "Log Out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In', new_sessions_path %>
+    <% end %>
+
+</div>

@@ -1,0 +1,16 @@
+<%= form_for @user do |f| %>
+      <%= f.text_field :first_name, :placeholder => "First Name" %><br />
+      <%= f.text_field :last_name, :placeholder => "Last Name" %><br />
+      <%= f.text_field :email, :placeholder => "Email" %><br />
+      <%= f.password_field :password, :placeholder => "Password" %><br />
+      <%= f.password_field :password_confirmation, :placeholder => "Password" %><br />
+      <%= f.text_field :current_location, id: 'location', :placeholder => "Current Location" %><br />
+      <%= select(:user, :program_attended, [['Product Management'], ['User Experience Design'], ['Web Development']]) %><br>
+      <%= select(:user, :campus, [['Atlanta'], ['Austin'], ['Boston'], ['Chicago'], ['Hong Kong'], ['London'], ['Los Angeles'], ['Melbourne'], ['New York'], ['San Francisco'], ['Seattle'], ['Sydney'], ['Washington D.C.']]) %><br>
+      <%= f.text_field :cohort, :placeholder => "Cohort" %><br />
+      <%= f.text_field :bio, :placeholder => "Short Bio" %><br />
+      <%= f.file_field :avatar %> <br />
+      <%= f.submit 'Submit', class: 'button'  %><br />
+    <% end %>
+
+    <%= render 'layouts/places' %>

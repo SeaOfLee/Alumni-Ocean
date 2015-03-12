@@ -1,0 +1,54 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+  <h1>The Latest</h1>
+    <div class="row clearfix">
+      <div class="column third">
+        <h2>Posts</h2>
+          <% @posts.each do |post| %>
+            <h3><%= link_to post.title, post %></h3>
+            <p><span class='post_time'>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %> <%= post.user.last_name %></span></p>
+            <p><%= post.comments.count %> replies</p>
+            <hr />
+          <% end %>
+          <%= link_to "See more Posts", posts_path %>
+      </div>
+
+      <div class="column third">
+        <h2>Jobs</h2>
+          <% @jobs.each do |job| %>
+            <h3><%= link_to job.job_title, job %></h3>
+            <p><%= job.company %>, <%= job.location %></p>
+            <p><span class='post_time'>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></span></p>
+            <hr />
+          <% end %>
+          <%= link_to "See more Jobs", jobs_path %>
+      </div>
+
+      <div class="column third">
+        <h2>Events</h2>
+          <% @events.each do |event| %>
+            <h3><%= link_to event.event_name, event %></h3>
+            <p><%= event.event_location %></p>
+            <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
+            <hr />
+          <% end %>
+          <%= link_to "See more Events", events_path %>
+      </div>
+    </div>
+
+
+<hr>
+Current User ID: <%= session["user_id"].inspect %><br>
+<%= params.inspect %>
+<br>
+<% if current_user != nil %>
+Logged in as: <%= current_user.email %> |
+<!-- method delete overrides button's normal behavior of POST -->
+  <%= link_to "Log Out", sessions_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', new_sessions_path %>
+<% end %>
+
+</div>

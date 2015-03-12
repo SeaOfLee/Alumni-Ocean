@@ -1,0 +1,35 @@
+<%= render 'layouts/sidenav' %>
+
+  <div class="main_container">
+
+  <h1><%= @post.title %></h1>
+    <p><span class='post_time'>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.first_name %> <%= @post.user.last_name %></span></p>
+
+    <p><%= simple_format(@post.content) %></p>
+
+    <% if current_user == @post.user %>
+      <%= link_to "Edit", edit_post_path(@post) %>
+    <% end %>
+
+    <% if current_user == @post.user %>
+      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this?" }%>
+    <% end %>
+
+    <h5><%= @post.comments.count %> replies</h4>
+      <%= render @post.comments %>
+      <h4>Comment on post</h4>
+      <%= render 'comments/form' %>
+
+      <hr>
+      Current User ID: <%= session["user_id"].inspect %><br>
+      <%= params.inspect %>
+      <br>
+      <% if current_user != nil %>
+      Logged in as: <%= current_user.email %> |
+      <!-- method delete overrides button's normal behavior of POST -->
+        <%= link_to "Log Out", sessions_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign In', new_sessions_path %>
+      <% end %>
+
+</div>
