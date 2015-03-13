@@ -9,13 +9,13 @@
     </div>
 
     <div class='row clearfix'>
-      <div class='column third'>
+      <div class='column fifth'>
         <p><span class='label'>Company:</span> <%= @job.company %></p>
       </div>
-      <div class='column third'>
+      <div class='column fifth'>
         <p><span class='label'>Job Type:</span> <%= @job.job_type %></p>
       </div>
-      <div class='column third'>
+      <div class='column three-fifths'>
         <p><span class='label'>Location:</span> <%= @job.location %></p>
       </div>
     </div>
@@ -24,6 +24,14 @@
       <div class='column full'>
         <p><%= simple_format(@job.description) %></p>
         <p>For more information, email: <%= mail_to @job.contact %>.</a></p>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <p><span>Google map URL</span> <span class="variable">(url)</span>: <br/><span id="url"></span></p>
+        <%= render 'layouts/maps' %>
+        <div id="map-canvas"></div>
       </div>
     </div>
 
