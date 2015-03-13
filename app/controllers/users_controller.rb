@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authorize
+  
   def search
     if params[:search].present?
       @users = User.search(params[:search])
