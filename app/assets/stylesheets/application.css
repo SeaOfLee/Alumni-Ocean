@@ -217,7 +217,7 @@ hr {
 
 .button {
   background-color: #fa4542;
-  padding: 1rem;
+  padding: 0.5rem;
   color: white;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
@@ -255,7 +255,7 @@ hr {
 
 .button_inverse {
   background-color: none;
-  padding: 1rem;
+  padding: .5rem;
   color: #fa4542;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
