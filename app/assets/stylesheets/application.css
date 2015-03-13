@@ -343,7 +343,7 @@ select:focus {
 
 /*--Splash Styling--*/
 .splash{
-  background-image: url("ga_splash_banner.png");
+  background-image: url("ga_banner_splash_blacker.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover; 
@@ -357,6 +357,8 @@ select:focus {
 .splash h1{
   text-align: center;
   color: #FFFFFF;
+  font-size: 2.5em;
+  line-height: 1em;
 }
 
 .buttons {
@@ -391,10 +393,15 @@ img.icon {
   text-align: center;
 }
 
+.footer {
+  background-color: #000000;
+
+}
+
 .session .button {
   width: 100%;
 }
 
 .button_inverse {
-  width: 100%
+  width: 100%;
 }
