@@ -220,6 +220,20 @@ hr {
   text-decoration: none;
 }
 
+.button_inverse {
+  background-color: none;
+  padding: 1rem;
+  color: #fa4542;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #fa4542;
+}
+
 input[type=submit] {
   border: none;
 }
@@ -373,11 +387,21 @@ img.icon {
   margin-bottom: 5.5rem;
 }
 
+.session {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
 .footer {
   background-color: #000000;
 
 }
 
+.session .button {
+  width: 100%;
+}
 
-
-
+.button_inverse {
+  width: 100%;
+}
