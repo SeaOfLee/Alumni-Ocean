@@ -2,23 +2,35 @@
 
   // Autocomplete variables
   var input = document.getElementById('location');
-  var searchform = document.getElementById('form1');
+  // var searchform = document.getElementById('form1');
   var place;
   var autocomplete = new google.maps.places.Autocomplete(input);
 
   // Add listener to detect autocomplete selection
   google.maps.event.addListener(autocomplete, 'place_changed', function () {
     place = autocomplete.getPlace();
-    // console.log(place;)
+    var newlatlong = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
+    var newLat = place.geometry.location.lat()
+    var newLong = place.geometry.location.lng()
+    console.log(newlatlong);
+    console.log(newLat);
+    console.log(newLong);
+    window.localStorage.setItem("long",newLong);
+    var long  = parseFloat(window.localStorage.getItem("long"));
+    console.log(long);
+    window.localStorage.setItem("lat",newLat);
+    var lat  = parseFloat(window.localStorage.getItem("lat"));
+    console.log(lat);
   });
 
-  // Add listener to search
-  searchform.addEventListener("submit", function() {
-    var newlatlong = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
-    map.setCenter(newlatlong);
-    marker.setPosition(newlatlong);
-    map.setZoom(12);
-  })
+  // // Add listener to search
+  // searchform.addEventListener("map_button", function() {
+  //   var newlatlong = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
+  //   map.setCenter(newlatlong);
+  //   marker.setPosition(newlatlong);
+  //   map.setZoom(12);
+  //   alert(newlatlong);
+  // })
 
   // Reset the input box on click
   input.addEventListener('click', function(){
