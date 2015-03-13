@@ -199,6 +199,25 @@ hr {
   text-decoration: none;
 }
 
+.button_secondary {
+  background-color: #BDBDBD;
+  padding: 1rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.button_secondary:hover {
+  background-color: #A5A5A5;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 input[type=submit] {
   border: none;
 }
@@ -308,10 +327,10 @@ select:focus {
 
 /*--Splash Styling--*/
 .splash{
-  background-color: #000000;
-  width: 50%;
-  margin: 50px auto;
-  padding: 20px;
+  background-image: url("ga_splash_banner.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; 
 }
 
 .splash p{
@@ -329,16 +348,26 @@ select:focus {
   width: 200px;
 }
 
-.benefits {
+.benefits h2 {
   text-align: center;
+}
+
+.benefits p{
+  text-align: center;
+  padding: 0 1.5rem 0 1.5rem;
 }
 
 img.icon {
   width: 50%;
   margin: 0 auto;
   display: block;
+  padding-top: 3rem;
 }
 
+.banner {
+  margin-top: 5.5rem;
+  margin-bottom: 5.5rem;
+}
 
 
 
