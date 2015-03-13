@@ -125,14 +125,13 @@ html, body {
 
 /* --- Typography --- */
 
-
 p {
   font-family: 'Gentium Basic', serif;
   font-size: 1em;
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 .label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -178,6 +177,9 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.label {
+  font-size: 0.7em;
+}
 /* --- Button Styling --- */
 
 .button {
@@ -327,7 +329,7 @@ select:focus {
 
 /*--Splash Styling--*/
 .splash{
-  background-image: url("ga_splash_banner.png");
+  background-image: url("ga_banner_splash_blacker.png");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover; 
@@ -341,6 +343,8 @@ select:focus {
 .splash h1{
   text-align: center;
   color: #FFFFFF;
+  font-size: 2.5em;
+  line-height: 1em;
 }
 
 .buttons {
@@ -367,6 +371,11 @@ img.icon {
 .banner {
   margin-top: 5.5rem;
   margin-bottom: 5.5rem;
+}
+
+.footer {
+  background-color: #000000;
+
 }
 
 
