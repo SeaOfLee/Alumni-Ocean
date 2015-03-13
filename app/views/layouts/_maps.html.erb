@@ -23,12 +23,12 @@
   //   input.value = "";
   // });
 
-  var long  = parseInt(window.localStorage.getItem("long"));
+  var long  = parseFloat(window.localStorage.getItem("long"));
   console.log(long);
-  var lat  = parseInt(window.localStorage.getItem("lat"));
+  var lat  = parseFloat(window.localStorage.getItem("lat"));
   console.log(lat);
 
-  function initialize(lat,long) {
+  function initialize() {
     var myLatlng = new google.maps.LatLng(lat,long);
     var mapOptions = {
       zoom: 13,
