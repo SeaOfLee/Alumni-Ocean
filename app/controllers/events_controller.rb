@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :authorize
+
   def search
     if params[:search].present?
       @events = Event.search(params[:search])
