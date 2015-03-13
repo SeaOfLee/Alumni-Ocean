@@ -1,5 +1,6 @@
 <div class="container">
-<div class="splash">
+<div class="row clearfix splash">
+<div class="column full banner">
 <h1>Welcome to Alum.ly!</h1>
 <p>
 	Alum.ly is the page for all your GA Alum needs! </br>
@@ -8,10 +9,45 @@
 </p>
 <div class="buttons">
 
- <%= link_to 'Sign In', new_sessions_path, class: 'button' %>
+ <%= link_to 'Sign In', new_sessions_path, class: 'button_secondary' %>
 
  <%= link_to 'Sign Up', new_user_path, class: 'button' %>
 
  </div>
+ </div>
+ </div>
+
+<div class="row clearfix benefits">
+
+	<div class="column third">
+
+		<img class="icon" src="../assets/ga_connect.png">
+		<h2>Connect Globally</h2>
+		<p>Introduce yourself to our global community of amazingly talented individuals, empowered to pursue work they love.</p>
+	</div>
+
+	<div class="column third">
+
+		<img class="icon" src="../assets/ga_events.png">
+		<h2>Check Out Events</h2>
+		<p>Learn about the latest and greatest industry events in your locale. Your networking calendar will never be empty.</p>
+	</div>
+
+	<div class="column third">
+
+		<img class="icon" src="../assets/ga_jobs.png">
+		<h2>Find Jobs</h2>
+		<p>Did you know that 30% of jobs are never posted publicly? Get the scoop on new positions you'll never see on LinkedIn.</p>
+	</div>
+</div>
+
+<div class="row clearfix footer">
+	<div class="column full">
+		<p>Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and </p>
+		<p class="copyright">Made with &hearts; by Katie Kelleher, Lee Richardson &amp; Lauren Pawell.</p>
+	</div>
+</div>
+
+
 </div>
 </div>
