@@ -9,14 +9,11 @@
     </div>
 
     <div class='row clearfix'>
-      <div class='column fifth'>
+      <div class='column third'>
         <p><span class='label'>Company:</span> <%= @job.company %></p>
       </div>
-      <div class='column fifth'>
+      <div class='column third'>
         <p><span class='label'>Job Type:</span> <%= @job.job_type %></p>
-      </div>
-      <div class='column three-fifths'>
-        <p><span class='label'>Location:</span> <%= @job.location %></p>
       </div>
     </div>
 
@@ -29,7 +26,12 @@
 
     <div class='row clearfix'>
       <div class='column full'>
-        <p><span>Google map URL</span> <span class="variable">(url)</span>: <br/><span id="url"></span></p>
+        <p><span class='label'>Location:</span> <%= @job.location %></p>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
         <%= render 'layouts/maps' %>
         <div id="map-canvas"></div>
       </div>
