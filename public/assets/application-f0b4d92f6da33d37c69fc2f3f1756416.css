@@ -1,0 +1,338 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+ *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ /* Small screens (default) */
+ html { font-size: 100%; }
+
+ /* Medium screens (640px) */
+ @media (min-width: 40rem) {
+   html { font-size: 112%; }
+ }
+
+ /* Large screens (1024px) */
+ @media (min-width: 64rem) {
+   html { font-size: 120%; }
+ }
+
+/* --- Overall page layout ---- */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  max-width: rem-calc(100%);
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+@media (min-width: 40rem) {
+  .column {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .column.full { width: 100%; }
+  .column.two-thirds { width: 66.7%; }
+  .column.half { width: 50%; }
+  .column.third { width: 33.3%; }
+  .column.fourth { width: 25%; }
+  .column.fifth { width: 20%; }
+  .column.two-fifths { width: 80%; }
+  .column.flow-opposite { float: right; }
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+/* --- Navigation ---*/
+
+.sidenav_container {
+  max-width: rem-calc(25%);
+  width: 25%;
+  height: 100%;
+  background-color: #000000;
+  float: left;
+  position: fixed;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sidenav_container ul {
+  list-style: none;
+}
+
+.sidenav_container ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.sidenav_container ul li a:hover {
+  color: #fa4542;
+}
+
+.copyright {
+  font-size: 0.5rem;
+  color: #FFFFFF;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: none;
+}
+
+/* --- Main Content --- */
+
+.main_container {
+  max-width: rem-calc(75%);
+  width: 75%;
+  float: right;
+  padding: 1rem;
+}
+
+/* --- Typography --- */
+
+
+p {
+  font-family: 'Gentium Basic', serif;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a {
+  color: #fa4542;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fa4542;
+  text-decoration: underline;
+}
+
+.label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.post_time {
+  font-size: 0.8em;
+  color: #969696;
+  font-style: italic;
+  font-family: 'Gentium Basic', serif;
+}
+
+.edit_delete {
+  font-size: 0.8em;
+  float: right;
+  font-family: 'Gentium Basic', serif;
+}
+
+.content_title {
+  color: #000000;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- Button Styling --- */
+
+.button {
+  background-color: #fa4542;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #e02a27;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+input[type=submit] {
+  border: none;
+}
+
+/* --- Form Styling --- */
+input[type=text] {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+input[type=text]:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
+
+textarea {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+textarea:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
+
+input[type=date] {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+input[type=date]:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
+
+input[type=time] {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+input[type=time]:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
+
+input[type=password] {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+input[type=password]:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
+
+select {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: #969696 2px solid;
+  padding: 0.5rem;
+  font-size: .8em;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
+select:focus {
+  border: solid 1px #fdde29 ;
+  box-shadow: 0 0 5px 1px #ffee31;
+  outline: none;
+}
+
+/*--Splash Styling--*/
+.splash{
+  background-color: #000000;
+  width: 50%;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.splash p{
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.splash h1{
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.buttons {
+  margin: 40px auto 20px auto;
+  width: 200px;
+}
+
+
+
+
+
+
+
