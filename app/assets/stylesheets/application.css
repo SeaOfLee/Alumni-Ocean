@@ -125,14 +125,13 @@ html, body {
 
 /* --- Typography --- */
 
-
 p {
   font-family: 'Gentium Basic', serif;
   font-size: 1em;
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 .label {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -178,6 +177,9 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.label {
+  font-size: 0.7em;
+}
 /* --- Button Styling --- */
 
 .button {
