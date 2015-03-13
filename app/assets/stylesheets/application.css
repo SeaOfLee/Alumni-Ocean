@@ -61,6 +61,7 @@ html, body {
   .column.fourth { width: 25%; }
   .column.fifth { width: 20%; }
   .column.two-fifths { width: 80%; }
+  .column.three-fifths { width: 60%; }
   .column.flow-opposite { float: right; }
 }
 
@@ -142,7 +143,7 @@ html, body {
   }
 
   .nav_icon:hover {
-    color: #fa4542; 
+    color: #fa4542;
   }
 
 }
@@ -437,4 +438,12 @@ img.icon {
 
 .button_inverse {
   width: 100%;
+}
+
+/* --- Google Maps Styling --- */
+
+#map-canvas {
+	height: 300px;
+  margin: 0 0 1rem 0;
+  border: 1px solid #000000;
 }
