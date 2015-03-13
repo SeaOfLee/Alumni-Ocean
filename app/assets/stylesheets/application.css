@@ -329,7 +329,15 @@ select:focus {
   width: 200px;
 }
 
+.benefits {
+  text-align: center;
+}
 
+img.icon {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
 
 
 
