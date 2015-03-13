@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_filter :authorize
+
   def search
     if params[:search].present?
       @jobs = Job.search(params[:search])
