@@ -376,7 +376,7 @@ select:focus {
 
 /*--Splash Styling--*/
 .splash{
-  background-image: url("ga_banner_splash_blacker.png");
+  /*background-image: url("ga_banner_splash_blacker.png");*/
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
