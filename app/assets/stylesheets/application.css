@@ -96,6 +96,11 @@ html, body {
   list-style: none;
 }
 
+.sidenav_container ul li {
+  color: #FFFFFF;
+  line-height: 3em;
+}
+
 .sidenav_container ul li a {
   color: #FFFFFF;
   text-decoration: none;
@@ -346,7 +351,7 @@ select:focus {
   background-image: url("ga_banner_splash_blacker.png");
   width: 100%;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
 
 .splash p{
@@ -372,7 +377,7 @@ select:focus {
 
 .benefits p{
   text-align: center;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.5rem 2rem 1.5rem;
 }
 
 img.icon {
