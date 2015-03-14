@@ -1,12 +1,9 @@
-<%= render 'layouts/sidenav' %>
+<div class="container black_back">
+  <div class="row clearfix">
+    <div class="column full login">
 
-  <div class="main_container">
-
-    <div class='row clearfix'>
-      <div class='column full'>
         <h1>New User Sign Up</h1>
-      </div>
-    </div>
+
 
     <%= form_for @user do |f| %>
       <div class='row clearfix'>
@@ -76,4 +73,6 @@
       <%= link_to 'Sign In', new_sessions_path %>
     <% end %>
 
+    </div>
+  </div>
 </div>

@@ -1,26 +1,17 @@
-  <%= render 'layouts/sidenav' %>
-  <div class="main_container">
+<div class="container black_back">
+  <div class="row clearfix">
+  <div class="column full login">
 
-    <h1>Log In</h1>
+      <h1>Log In To Alum.ly</h1>
 
-    <div class='session'>
-      <%= form_for @user, url:{ :controller => 'sessions', :action => "create"} do |f| %>
-      <%= f.text_field :email, :placeholder => "Email" %><br>
-      <%= f.password_field :password, :placeholder => "Password" %><br>
-      <%= f.submit "Sign In", class: 'button' %><br>
-      <%= link_to('Sign Up', new_user_path, method: :get) %>
-      <% end %>
-    </div>
-<hr>
-Current User ID: <%= session["user_id"].inspect %><br>
-<%= params.inspect %>
-<br>
-<% if current_user != nil %>
-Logged in as: <%= current_user.email %> |
-<!-- method delete overrides button's normal behavior of POST -->
-  <%= link_to "Log Out", sessions_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign In', new_sessions_path %>
-<% end %>
+      <div class='session'>
+        <%= form_for @user, url:{ :controller => 'sessions', :action => "create"} do |f| %>
+        <%= f.text_field :email, :placeholder => "Email" %><br>
+        <%= f.password_field :password, :placeholder => "Password" %><br>
+        <%= f.submit "Sign In", class: 'button' %><br>
+        <% end %><br>
+        <a href="../users/new" class="link_secondary">Sign Up</a>
+      </div>
 
+  </div>
 </div>
