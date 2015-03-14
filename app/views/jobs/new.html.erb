@@ -36,32 +36,6 @@
 
         <% end %>
 
-        <script type="text/javascript">
-
-          // Autocomplete variables
-          var input = document.getElementById('location');
-          // var searchform = document.getElementById('form1');
-          var place;
-          var autocomplete = new google.maps.places.Autocomplete(input);
-
-          // Add listener to detect autocomplete selection
-          google.maps.event.addListener(autocomplete, 'place_changed', function () {
-            place = autocomplete.getPlace();
-            var newlatlong = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
-            var newLat = place.geometry.location.lat()
-            var newLong = place.geometry.location.lng()
-            console.log(newlatlong);
-            console.log(newLat);
-            console.log(newLong);
-            $("#job_lat").val(newLat);
-            $("#job_long").val(newLong);
-          });
-
-          // Reset the input box on click
-          input.addEventListener('click', function(){
-            input.value = "";
-          });
-
-        </script>
-
+    <%= render 'places' %>
+    
 </div>

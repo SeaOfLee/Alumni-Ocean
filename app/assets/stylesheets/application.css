@@ -482,7 +482,10 @@ img.icon {
 #map-canvas {
 	height: 300px;
   margin: 0 0 1rem 0;
-  border: 1px solid #000000;
+  border: 2px solid #969696;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 
@@ -506,6 +509,10 @@ img.icon {
   height: 120px;
 }
 
+.meta-info {
+  padding-bottom: 2rem;
+}
+
 /* --- Pagination --- */
 
 .pagination {
@@ -514,6 +521,7 @@ img.icon {
   padding: 1em;
   cursor: default;
   font-size: 0.8rem;
+  font-family: 'Gentium Basic', serif;
 }
 
 .pagination a, .pagination span {
