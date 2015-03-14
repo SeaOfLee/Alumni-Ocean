@@ -41,7 +41,7 @@
       <div class='column full'>
         <hr />
       </div>
-      <div class='column half'>
+      <div class='column half meta-info'>
         <span class='post_time'>Posted <%= time_ago_in_words(@job.created_at) %> ago by <%= @job.user.first_name %> <%= @job.user.last_name %></span>
       </div>
       <div class='column half'>
@@ -55,18 +55,5 @@
         </span>
       </div>
     </div>
-
-
-    <hr>
-    Current User ID: <%= session["user_id"].inspect %><br>
-    <%= params.inspect %>
-    <br>
-    <% if current_user != nil %>
-    Logged in as: <%= current_user.email %> |
-    <!-- method delete overrides button's normal behavior of POST -->
-      <%= link_to "Log Out", sessions_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign In', new_sessions_path %>
-    <% end %>
 
 </div>

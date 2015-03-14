@@ -31,7 +31,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      render json:@job
+      redirect_to @job
     else
       render 'edit'
     end
