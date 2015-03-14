@@ -1,12 +1,9 @@
-<%= render 'layouts/sidenav' %>
+<div class="container black_back">
+  <div class="row clearfix">
+    <div class="column full login">
 
-  <div class="main_container">
-
-    <div class='row clearfix'>
-      <div class='column full'>
         <h1>New User Sign Up</h1>
-      </div>
-    </div>
+
 
     <%= form_for @user do |f| %>
       <div class='row clearfix'>
@@ -62,18 +59,15 @@
       </div>
     <% end %>
 
+    <div class='row clearfix'>
+      <div class='column full'>
+        <br><a href="../sessions/new" class="link_secondary">Sign In</a>
+      </div>
+    </div>
+
+
     <%= render 'layouts/places' %>
 
-    <hr>
-    Current User ID: <%= session["user_id"].inspect %><br>
-    <%= params.inspect %>
-    <br>
-    <% if current_user != nil %>
-    Logged in as: <%= current_user.email %> |
-    <!-- method delete overrides button's normal behavior of POST -->
-      <%= link_to "Log Out", sessions_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign In', new_sessions_path %>
-    <% end %>
-
+    </div>
+  </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312022852) do
+ActiveRecord::Schema.define(version: 20150313232338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20150312022852) do
     t.string   "job_type"
     t.string   "job_title"
     t.integer  "user_id"
+    t.float    "lat"
+    t.float    "long"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -77,9 +79,9 @@ ActiveRecord::Schema.define(version: 20150312022852) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "current_location"
     t.string   "password_salt"
     t.string   "password_hash"
-    t.string   "current_location"
   end
 
   add_foreign_key "comments", "posts"
