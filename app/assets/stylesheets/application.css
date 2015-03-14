@@ -200,6 +200,14 @@ a:hover {
   text-transform: uppercase;
 }
 
+.label_black {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 0.9em;
+}
+
 .post_time {
   font-size: 0.8em;
   color: #969696;

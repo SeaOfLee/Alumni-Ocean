@@ -28,8 +28,8 @@
       <div class='column full'>
         <% @jobs.each do |job| %>
           <h2><%= link_to job.job_title, job, class: 'content_title' %></h2>
-          <p><span class='label'>Company: </span><%= job.company %><br />
-             <span class='label'>Location: </span><%= job.location %></p>
+          <p><span class='label_black'>Company: </span><%= job.company %><br />
+             <span class='label_black'>Location: </span><%= job.location %></p>
           <p><span class='post_time'>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></span></p>
           <hr />
         <% end %>
