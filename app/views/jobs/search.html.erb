@@ -14,11 +14,5 @@
       <p>Posted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.first_name %> <%= job.user.last_name %></p>
       <hr />
     <% end %>
-
-    <div class="row clearfix">
-      <div class="column full pagination">
-        <%= will_paginate @jobs %>
-      </div>
-    </div>
-
+    
 </div>
