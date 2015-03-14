@@ -31,7 +31,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_to @job
+      render json:@job
     else
       render 'edit'
     end
@@ -52,6 +52,6 @@ class JobsController < ApplicationController
 
   private
     def job_params
-          params.require(:job).permit(:job_title, :company, :location, :job_type, :description, :contact)
+          params.require(:job).permit(:job_title, :company, :location, :job_type, :description, :contact, :lat, :long)
     end
 end

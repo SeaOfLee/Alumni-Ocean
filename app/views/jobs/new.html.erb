@@ -30,20 +30,38 @@
         <div class='row clearfix'>
           <div class='column full'><%= f.submit 'Post the job', class: 'button', id: 'map_button'  %></div>
         </div>
+
+        <%= f.hidden_field :lat %>
+        <%= f.hidden_field :long %>
+
         <% end %>
 
-      <%= render 'layouts/places' %>
+        <script type="text/javascript">
 
-      <hr>
-      Current User ID: <%= session["user_id"].inspect %><br>
-      <%= params.inspect %>
-      <br>
-      <% if current_user != nil %>
-      Logged in as: <%= current_user.email %> |
-      <!-- method delete overrides button's normal behavior of POST -->
-        <%= link_to "Log Out", sessions_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign In', new_sessions_path %>
-      <% end %>
+          // Autocomplete variables
+          var input = document.getElementById('location');
+          // var searchform = document.getElementById('form1');
+          var place;
+          var autocomplete = new google.maps.places.Autocomplete(input);
+
+          // Add listener to detect autocomplete selection
+          google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            place = autocomplete.getPlace();
+            var newlatlong = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
+            var newLat = place.geometry.location.lat()
+            var newLong = place.geometry.location.lng()
+            console.log(newlatlong);
+            console.log(newLat);
+            console.log(newLong);
+            $("#job_lat").val(newLat);
+            $("#job_long").val(newLong);
+          });
+
+          // Reset the input box on click
+          input.addEventListener('click', function(){
+            input.value = "";
+          });
+
+        </script>
 
 </div>

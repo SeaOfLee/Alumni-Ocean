@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+  // Google Map variables
+  var map;
+  var marker;
+
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(<%= @job.lat %>,<%= @job.long %>);
+    var mapOptions = {
+      zoom: 13,
+      center: myLatlng
+    }
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Main map'
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
