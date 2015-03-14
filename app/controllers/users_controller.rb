@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :authorize, only: [:search, :index, :show, :update, :edit, :destroy]
+
   def search
     if params[:search].present?
       @users = User.search(params[:search])

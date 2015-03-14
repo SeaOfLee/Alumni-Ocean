@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def dashboard
     @posts = Post.limit(3)
     @jobs = Job.limit(3)
