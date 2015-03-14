@@ -502,4 +502,46 @@ img.icon {
 
 .pagination {
   text-align: center;
+  text-align: center;
+  padding: 1em;
+  cursor: default;
+  font-size: 0.8rem;
+}
+
+.pagination a, .pagination span {
+  padding: 0.2em 0.3em;
+}
+
+.pagination .disabled {
+    color: #aaaaaa;
+}
+
+.pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #fa4542;
+    color: #FFFFFF;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #969696;
+}
+
+.pagination a:hover, .pagination a:focus {
+    text-decoration: none;
+    background-color: #ececec;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
 }
