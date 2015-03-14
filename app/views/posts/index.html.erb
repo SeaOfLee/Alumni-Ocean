@@ -14,7 +14,7 @@
   <% @posts.each do |post| %>
     <h2><%= link_to post.title, post, class: 'content_title' %></h2>
     <p><span class='post_time'>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %> <%= post.user.last_name %></span></p>
-    <p><%= post.comments.count %> replies</p>
+    <p><%= pluralize(post.comments.count, 'reply') %></p>
     <hr />
   <% end %>
 

@@ -29,8 +29,8 @@
       <div class='column full'>
         <% @events.each do |event| %>
           <h2><%= link_to event.event_name, event, class: 'content_title' %></h2>
-          <p><span class='label'>Date: </span><%= event.event_date %><br />
-             <span class='label'>Location: </span><%= event.event_location %></p>
+          <p><span class='label_black'>Date: </span><%= event.event_date %><br />
+             <span class='label_black'>Location: </span><%= event.event_location %></p>
              <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
           <hr />
         <% end %>
