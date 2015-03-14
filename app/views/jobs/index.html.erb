@@ -3,6 +3,10 @@
   <div class="main_container">
 
     <div class='row clearfix'>
+      <div class='column half'>
+        <h1>Job Board</h1>
+      </div>
+      <div class='column half'>
       <div class='column two-fifths'>
         <%= form_tag search_jobs_path, method: :get do %>
           <%= text_field_tag :search, params[:search], :placeholder => "Search in jobs:" %>
@@ -11,11 +15,6 @@
           <%= submit_tag("Search") %>
         <% end %>
       </div>
-    </div>
-
-    <div class='row clearfix'>
-      <div class='column full'>
-        <h1>Most Recent Jobs</h1>
       </div>
     </div>
 
