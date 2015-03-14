@@ -34,20 +34,13 @@
              <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
           <hr />
         <% end %>
-        <%= will_paginate @events %>
       </div>
     </div>
 
-<hr>
-Current User ID: <%= session["user_id"].inspect %><br>
-<%= params.inspect %>
-<br>
-<% if current_user != nil %>
-Logged in as: <%= current_user.email %> |
-<!-- method delete overrides button's normal behavior of POST -->
-  <%= link_to "Log Out", sessions_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign In', new_sessions_path %>
-<% end %>
+    <div class="row clearfix">
+      <div class="column full pagination">
+        <%= will_paginate @events %>
+      </div>
+    </div>
 
 </div>
