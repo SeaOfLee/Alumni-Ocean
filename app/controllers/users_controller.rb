@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users = User.order('created_at DESC').paginate(:page => params[:page], :per_page => 15)
   end
 
   def show
