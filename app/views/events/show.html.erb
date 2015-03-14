@@ -19,12 +19,6 @@
 
   <div class='row clearfix'>
     <div class='column full'>
-      <p><span class='label_black'>Location:</span> <%= @event.event_location %></p>
-    </div>
-  </div>
-
-  <div class='row clearfix'>
-    <div class='column full'>
       <p><%= simple_format(@event.event_description) %></p>
       <p>For more information, visit: <%= link_to @event.event_site %></a>.</p>
     </div>
@@ -32,6 +26,19 @@
 
   <div class='row clearfix'>
     <div class='column full'>
+      <p><span class='label_black'>Location:</span> <%= @event.event_location %></p>
+    </div>
+  </div>
+
+  <div class='row clearfix'>
+    <div class='column full'>
+      <%= render 'maps' %>
+      <div id="map-canvas"></div>
+    </div>
+  </div>
+
+  <div class='row clearfix meta-info'>
+    <div class='column full '>
       <hr />
     </div>
     <div class='column half'>
@@ -49,16 +56,6 @@
     </div>
   </div>
 
-  <hr>
-  Current User ID: <%= session["user_id"].inspect %><br>
-  <%= params.inspect %>
-  <br>
-  <% if current_user != nil %>
-  Logged in as: <%= current_user.email %> |
-  <!-- method delete overrides button's normal behavior of POST -->
-    <%= link_to "Log Out", sessions_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign In', new_sessions_path %>
-  <% end %>
+
 
   </div>
