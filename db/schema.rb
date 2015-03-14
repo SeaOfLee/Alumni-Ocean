@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313232338) do
+ActiveRecord::Schema.define(version: 20150314224052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20150313232338) do
     t.integer  "user_id"
     t.date     "event_date"
     t.time     "event_time"
+    t.float    "lat"
+    t.float    "long"
   end
 
   create_table "jobs", force: :cascade do |t|
