@@ -37,6 +37,21 @@
       </tbody>
     </table>
 
+    <div class="row clearfix">
+    <% @users.each do |u| %>
+      <div class="column fifth">
+        <%= image_tag u.avatar.url %>
+      </div>
+      <div class="column two-thirds">
+        <h3><%= link_to u.first_name, u %> <%= link_to u.last_name, u %></h3><br>
+        <%= u.current_location %><br>
+        <%= u.program_attended %><br>
+        <%= u.bio %><br>
+        <% if u.is_admin == true %><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %><% end %><br>
+      </div>
+    <% end %>
+    </div>
+
     <hr>
     Current User ID: <%= session["user_id"].inspect %><br>
     <%= params.inspect %>
