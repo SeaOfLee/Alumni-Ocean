@@ -12,7 +12,7 @@
     <div class="row clearfix">
     <% @users.each do |u| %>
       <div class="column fifth">
-        <%= image_tag u.avatar.url %>
+        <%= image_tag u.avatar.url, class: 'small_profile' %>
       </div>
       <div class="column two-thirds">
         <h3><%= link_to u.first_name, u %> <%= link_to u.last_name, u %></h3><br>
@@ -24,6 +24,10 @@
     <% end %>
     </div>
 
-    <%= will_paginate @users %>
+    <div class="row clearfix">
+      <div class="column full pagination">
+      <%= will_paginate @users %>
+      </div>
+    </div>
 
 </div>
