@@ -1,18 +1,16 @@
 class UsersController < ApplicationController
 
-  before_filter :authorize, only: [:search, :index, :show, :update, :edit, :destroy]
-
   def search
     if params[:search].present?
       @users = User.search(params[:search])
     else
       @users = User.all
-      @users = User.order('created_at DESC').paginate(:page => params[:page], :per_page => 15)
     end
   end
 
   def index
     @users = User.all
+    @users = User.order('created_at DESC').paginate(:page => params[:page], :per_page => 15)
   end
 
   def show
