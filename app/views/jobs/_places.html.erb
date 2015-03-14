@@ -1,5 +1,3 @@
-<%= hidden_field_tag 'job_identifier', @job.id.to_s %>
-
 <script type="text/javascript">
 
   // Autocomplete variables
@@ -17,22 +15,9 @@
     console.log(newlatlong);
     console.log(newLat);
     console.log(newLong);
-    $.ajax({
-      type: "POST",
-      url: "/jobs/",
-      dataType: "json",
-      data: { job: { lat: "sdfsdf", long: newLong } }
-    })
+    $("#job_lat").val(newLat);
+    $("#job_long").val(newLong);
   });
-
-  // // Add listener to search
-  // searchform.addEventListener("map_button", function() {
-  //   var newlatlong = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
-  //   map.setCenter(newlatlong);
-  //   marker.setPosition(newlatlong);
-  //   map.setZoom(12);
-  //   alert(newlatlong);
-  // })
 
   // Reset the input box on click
   input.addEventListener('click', function(){
