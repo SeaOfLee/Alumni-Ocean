@@ -490,3 +490,16 @@ img.icon {
   text-align: center;
   color: #FFFFFF;
 }
+
+/* --- User Index --- */
+.small_profile {
+  border: 1px solid #000000;
+  width: 120px;
+  height: 120px;
+}
+
+/* --- Pagination --- */
+
+.pagination {
+  text-align: center;
+}
