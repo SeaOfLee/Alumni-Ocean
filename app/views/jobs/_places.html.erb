@@ -18,16 +18,10 @@
     console.log(newLat);
     console.log(newLong);
     $.ajax({
-      type: "PUT",
-      url: "/jobs/" + $("#job_identifier").val(),
+      type: "POST",
+      url: "/jobs/",
       dataType: "json",
-      data: { job: { long: newLong, lat: newLat } },
-      error: function(e){
-        console.log(e);
-      },
-      success: function(data){
-        console.log(data);
-      }
+      data: { job: { lat: "sdfsdf", long: newLong } }
     })
   });
 
