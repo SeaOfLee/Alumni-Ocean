@@ -15,16 +15,10 @@
     <hr />
   <% end %>
 
-  <hr>
-  Current User ID: <%= session["user_id"].inspect %><br>
-  <%= params.inspect %>
-  <br>
-  <% if current_user != nil %>
-  Logged in as: <%= current_user.email %> |
-  <!-- method delete overrides button's normal behavior of POST -->
-    <%= link_to "Log Out", sessions_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Sign In', new_sessions_path %>
-  <% end %>
-
+  <div class="row clearfix">
+    <div class="column full pagination">
+      <%= will_paginate @posts %>
+    </div>
+  </div>
+  
 </div>
