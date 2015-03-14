@@ -224,14 +224,16 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/*style for choose file button label on user signup*/
 .label {
   font-size: 0.7em;
+  color: white;
 }
 /* --- Button Styling --- */
 
 .button {
   background-color: #fa4542;
-  padding: 0.5rem;
+  padding: 1rem;
   color: white;
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
@@ -441,6 +443,16 @@ img.icon {
 .session {
   margin: 0 auto;
   width: 50%;
+  text-align: center;
+}
+
+.user_submit {
+  margin: 0 auto;
+  width: 33%;
+  text-align: center;
+}
+
+.user_submit_center {
   text-align: center;
 }
 
