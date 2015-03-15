@@ -278,6 +278,25 @@ hr {
   text-decoration: none;
 }
 
+.button_new {
+  background-color: #BDBDBD;
+  padding: 0.5rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.6em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.button_new:hover {
+  background-color: #A5A5A5;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 .button_inverse {
   background-color: none;
   padding: .5rem;
