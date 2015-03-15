@@ -3,19 +3,17 @@
   <div class="main_container">
 
     <div class='row clearfix'>
-      <div class='column three-fourths'>
-        <%= form_tag search_users_path, method: :get do %>
-          <%= text_field_tag :search, params[:search], :placeholder => "Search alumni...", id: "search-input" %>
-        <div class='column fourth'>
-          <%= submit_tag ("Search") %>
+      <div class='column full'>
+          <%= form_tag search_users_path, :class => "search-form",  method: :get do %>
+            <%= text_field_tag :search, params[:search], :placeholder => "Look for alumni...", id: "search-input" %>
+            <%= submit_tag ("Search"), :id => "search-submit" %>
           <% end %>
         </div>
-      </div>
     </div>
 
     <div class='row clearfix'>
       <div class='column full'>
-        <h1>GA Alumni List</h1>
+        <h1>GA Alumni</h1>
       </div>
     </div>
 

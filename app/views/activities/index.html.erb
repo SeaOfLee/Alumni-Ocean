@@ -3,19 +3,17 @@
   <div class="main_container">
 
     <div class='row clearfix'>
-      <div class='column two-fifths'>
-        <%= form_tag search_activities_path, method: :get do %>
-          <%= text_field_tag :search, params[:search], :placeholder => "Search in events:" %>
-      </div>
-      <div class='column fifth'>
-          <%= submit_tag("Search") %>
+      <div class='column full'>
+        <%= form_tag search_activities_path, :class => "search-form", method: :get do %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Look for jobs...", id: "search-input" %>
+        <%= submit_tag ("Search"), :id => "search-submit" %>
         <% end %>
       </div>
     </div>
 
     <div class='row clearfix'>
       <div class='column full'>
-        <h1>Most Recent Events</h1>
+        <h1>Events Calendar</h1>
       </div>
     </div>
 
