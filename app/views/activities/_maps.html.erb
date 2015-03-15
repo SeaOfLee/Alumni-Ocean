@@ -5,7 +5,7 @@
   var marker;
 
   function initialize() {
-    var myLatlng = new google.maps.LatLng(<%= @event.lat %>,<%= @event.long %>);
+    var myLatlng = new google.maps.LatLng(<%= @activity.lat %>,<%= @activity.long %>);
     var mapOptions = {
       zoom: 13,
       center: myLatlng

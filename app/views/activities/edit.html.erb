@@ -8,7 +8,7 @@
     </div>
   </div>
 
-    <%= form_for @event do |f| %>
+    <%= form_for @activity do |f| %>
 
     <div class='row clearfix'>
       <div class='column third'><%= f.text_field :event_name, :placeholder => "Enter the event name..." %></div>
@@ -35,7 +35,7 @@
 
     <div class='row clearfix'>
       <div class='column full'>
-        <%= f.submit 'Update your event', class: 'button'  %> <%= link_to "Cancel", event_path %>
+        <%= f.submit 'Update your event', class: 'button'  %> <%= link_to "Cancel", activity_path %>
       </div>
     </div>
 

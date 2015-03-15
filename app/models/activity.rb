@@ -1,4 +1,4 @@
-class Event < ActiveRecord::Base
+class Activity < ActiveRecord::Base
   searchkick
   belongs_to :user
 

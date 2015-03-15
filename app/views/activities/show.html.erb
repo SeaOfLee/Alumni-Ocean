@@ -1,0 +1,61 @@
+<%= render 'layouts/sidenav' %>
+
+<div class="main_container">
+
+  <div class='row clearfix'>
+    <div class='column full'>
+      <h1><%= @activity.event_name %></h1>
+    </div>
+  </div>
+
+  <div class='row clearfix'>
+    <div class='column third'>
+      <p><span class='label_black'>Date:</span> <%= @activity.event_date.to_formatted_s(:long) %></p>
+    </div>
+    <div class='column third'>
+      <p><span class='label_black'>Time:</span> <%= @activity.event_time %></p>
+    </div>
+  </div>
+
+  <div class='row clearfix'>
+    <div class='column full'>
+      <p><%= simple_format(@activity.event_description) %></p>
+      <p>For more information, visit: <%= link_to @activity.event_site %></a>.</p>
+    </div>
+  </div>
+
+  <div class='row clearfix'>
+    <div class='column full'>
+      <p><span class='label_black'>Location:</span> <%= @activity.event_location %></p>
+    </div>
+  </div>
+
+  <div class='row clearfix'>
+    <div class='column full'>
+      <%= render 'maps' %>
+      <div id="map-canvas"></div>
+    </div>
+  </div>
+
+  <div class='row clearfix meta-info'>
+    <div class='column full '>
+      <hr />
+    </div>
+    <div class='column half'>
+      <span class='post_time'>Posted <%= time_ago_in_words(@activity.created_at) %> ago by <%= @activity.user.first_name %> <%= @activity.user.last_name %></span>
+    </div>
+    <div class='column half'>
+      <span class="edit_delete">
+        <% if current_user == @activity.user %>
+          <%= link_to "Edit", edit_activity_path(@activity) %>
+        <% end %> |
+        <% if current_user == @activity.user %>
+          <%= link_to "Delete", activity_path(@activity), method: :delete, data: { confirm: "Are you sure you want to delete this?" }%>
+        <% end %>
+      </span>
+    </div>
+  </div>
+
+
+
+  </div>

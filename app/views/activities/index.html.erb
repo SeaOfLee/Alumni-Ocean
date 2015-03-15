@@ -4,7 +4,7 @@
 
     <div class='row clearfix'>
       <div class='column two-fifths'>
-        <%= form_tag search_events_path, method: :get do %>
+        <%= form_tag search_activities_path, method: :get do %>
           <%= text_field_tag :search, params[:search], :placeholder => "Search in events:" %>
       </div>
       <div class='column fifth'>
@@ -21,17 +21,17 @@
 
     <div class='row clearfix'>
       <div class='column full'>
-        <%= link_to "New Event", new_event_path, class: 'button' %>
+        <%= link_to "New Event", new_activity_path, class: 'button' %>
       </div>
     </div>
 
     <div class='row clearfix'>
       <div class='column full'>
-        <% @events.each do |event| %>
-          <h2><%= link_to event.event_name, event, class: 'content_title' %></h2>
-          <p><span class='label_black'>Date: </span><%= event.event_date %><br />
-             <span class='label_black'>Location: </span><%= event.event_location %></p>
-             <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
+        <% @activities.each do |activity| %>
+          <h2><%= link_to activity.event_name, activity, class: 'content_title' %></h2>
+          <p><span class='label_black'>Date: </span><%= activity.event_date %><br />
+             <span class='label_black'>Location: </span><%= activity.event_location %></p>
+             <p><span class='post_time'>Posted <%= time_ago_in_words(activity.created_at) %> ago by <%= activity.user.first_name %> <%= activity.user.last_name %></span></p>
           <hr />
         <% end %>
       </div>
@@ -39,7 +39,7 @@
 
     <div class="row clearfix">
       <div class="column full pagination">
-        <%= will_paginate @events %>
+        <%= will_paginate @activities %>
       </div>
     </div>
 
