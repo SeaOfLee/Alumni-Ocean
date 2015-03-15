@@ -3,12 +3,13 @@
   <div class="main_container">
 
     <div class='row clearfix'>
-      <div class='column full'>
+      <div class='column three-fourths'>
         <%= form_tag search_users_path, method: :get do %>
-          <%= label_tag(:q, "Search for:") %>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag("Search") %>
-        <% end %>
+          <%= text_field_tag :search, params[:search], :placeholder => "Search alumni...", id: "search-input" %>
+        <div class='column fourth'>
+          <%= submit_tag ("Search") %>
+          <% end %>
+        </div>
       </div>
     </div>
 
