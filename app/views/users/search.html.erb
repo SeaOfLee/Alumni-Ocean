@@ -26,7 +26,7 @@
             <h2><%= link_to u.first_name, u, class: 'content_title' %> <%= link_to u.last_name, u, class: 'content_title' %></h2>
             <p><span class='label_black'>Current Location: </span><%= u.current_location %><br>
                <span class='label_black'>Program Attended: </span><%= u.program_attended %><br></p>
-            <%= u.bio %>
+            <p><%= u.bio %></p>
             <% if u.is_admin == true %><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %><% end %><br>
             <hr />
           </div>

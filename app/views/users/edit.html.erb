@@ -2,24 +2,67 @@
 
   <div class="main_container">
 
-    <h1>Users#edit</h1>
-    <p>Find me in app/views/users/edit.html.erb</p>
+    <div class="row clearfix">
+      <div class="column full">
 
-    <%= render 'form' %>
+          <h1>Edit Your Profile</h1>
+        </div>
+      </div>
 
-    <%= link_to 'View', @user %> |
-    <%= link_to 'Back', users_path %> |
 
-    <hr>
-    Current User ID: <%= session["user_id"].inspect %><br>
-    <%= params.inspect %>
-    <br>
-    <% if current_user != nil %>
-    Logged in as: <%= current_user.email %> |
-    <!-- method delete overrides button's normal behavior of POST -->
-      <%= link_to "Log Out", sessions_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign In', new_sessions_path %>
-    <% end %>
+      <%= form_for @user do |f| %>
+        <div class='row clearfix'>
+          <div class='column third'>
+          <%= f.text_field :first_name, :placeholder => "First Name" %>
+          </div>
+          <div class='column third'>
+            <%= f.text_field :last_name, :placeholder => "Last Name" %>
+          </div>
+          <div class='column third'>
+            <%= f.text_field :email, :placeholder => "Email" %>
+          </div>
+        </div>
 
-</div>
+        <div class='row clearfix'>
+          <div class='column full'>
+            <%= f.text_field :current_location, id: 'location', :placeholder => "Current Location" %>
+          </div>
+        </div>
+
+        <div class='row clearfix'>
+          <div class='column third'>
+            <%= select(:user, :program_attended, [['Product Management'], ['User Experience Design'], ['Web Development']]) %>
+          </div>
+          <div class='column third'>
+            <%= select(:user, :campus, [['Atlanta'], ['Austin'], ['Boston'], ['Chicago'], ['Hong Kong'], ['London'], ['Los Angeles'], ['Melbourne'], ['New York'], ['San Francisco'], ['Seattle'], ['Sydney'], ['Washington D.C.']]) %>
+          </div>
+          <div class='column third'>
+            <%= f.text_field :cohort, :placeholder => "Cohort" %>
+          </div>
+        </div>
+
+        <div class='row clearfix'>
+          <div class='column full'>
+            <%= f.text_field :bio, :placeholder => "Short Bio" %>
+          </div>
+        </div>
+
+        <div class='row clearfix'>
+          <div class='column full'>
+             <label class='label' for="file">Upload an Avatar</label><br>
+              <%= f.file_field :avatar %>
+          </div>
+        </div>
+
+        <div class='row clearfix'>
+          <div class='column full'>
+            <div class='user_submit_center'>
+              <%= f.submit 'Submit', class: 'button user_submit'  %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <%= render 'layouts/places' %>
+
+    </div>
