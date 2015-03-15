@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-  factory :event do
+  factory :activity do
     event_name "WDI Fair"
     event_location "Santa Monica, CA"
     event_description "Job fair for recent graduates."

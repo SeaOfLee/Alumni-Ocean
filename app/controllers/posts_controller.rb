@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authorize
-  
+
   def search
     if params[:search].present?
       @posts = Post.search(params[:search])

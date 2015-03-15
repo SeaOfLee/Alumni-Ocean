@@ -11,23 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314224052) do
+ActiveRecord::Schema.define(version: 20150314230636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
-
-  create_table "events", force: :cascade do |t|
+  create_table "activities", force: :cascade do |t|
     t.string   "event_name"
     t.string   "event_location"
     t.string   "event_description"
@@ -40,6 +29,17 @@ ActiveRecord::Schema.define(version: 20150314224052) do
     t.float    "lat"
     t.float    "long"
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "company"
@@ -81,9 +81,9 @@ ActiveRecord::Schema.define(version: 20150314224052) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "current_location"
     t.string   "password_salt"
     t.string   "password_hash"
+    t.string   "current_location"
   end
 
   add_foreign_key "comments", "posts"

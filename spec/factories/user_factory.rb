@@ -7,7 +7,16 @@ FactoryGirl.define do
     last_name  "siamese"
     email "bob@siamese.com"
     password "password123"
+    password_confirmation "password123"
+    current_location "Santa Monica"
+    program_attended "WDI"
+    campus "Atlanta"
+    cohort "14"
+    bio "Arg"
+    avatar_file_name "AsianSalad_Square.png"
+    avatar_content_type "image/png"
+    avatar_file_size 1013175
 
-    initialize_with { new(first_name, last_name, email) }
+    initialize_with { new(first_name, last_name, email, password, password_confirmation, current_location, program_attended, campus, cohort, bio, avatar_file_name, ) }
   end
 end

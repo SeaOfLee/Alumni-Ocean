@@ -10,13 +10,15 @@
   google.maps.event.addListener(autocomplete, 'place_changed', function () {
     place = autocomplete.getPlace();
     var newlatlong = new google.maps.LatLng(place.geometry.location.lat(),place.geometry.location.lng());
-    var newLat = place.geometry.location.lat()
-    var newLong = place.geometry.location.lng()
+    var actLat = place.geometry.location.lat()
+    var actLong = place.geometry.location.lng()
     console.log(newlatlong);
-    console.log(newLat);
-    console.log(newLong);
-    $("#event_lat").val(newLat);
-    $("#event_long").val(newLong);
+    console.log(actLat);
+    console.log(actLong);
+    $("#activity_lat").val(actLat);
+    $("#activity_long").val(actLong);
+    console.log(activity_lat);
+    console.log(activity_long);
   });
 
   // Reset the input box on click

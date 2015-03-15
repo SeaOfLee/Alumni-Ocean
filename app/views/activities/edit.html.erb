@@ -4,11 +4,11 @@
 
   <div class='row clearfix'>
     <div class='column full'>
-      <h1>Post A New Event</h1>
+      <h1>Edit Your Event</h1>
     </div>
   </div>
 
-    <%= form_for @event do |f| %>
+    <%= form_for @activity do |f| %>
 
     <div class='row clearfix'>
       <div class='column third'><%= f.text_field :event_name, :placeholder => "Enter the event name..." %></div>
@@ -23,7 +23,7 @@
 
     <div class='row clearfix'>
       <div class='column full'>
-        <%= f.text_area :event_description, :placeholder => "Describe the event..." %>
+         <%= f.text_area :event_description, :placeholder => "Describe the event..." %>
       </div>
     </div>
 
@@ -35,14 +35,11 @@
 
     <div class='row clearfix'>
       <div class='column full'>
-        <%= f.submit 'Post your event', class: 'button'  %>
+        <%= f.submit 'Update your event', class: 'button'  %> <%= link_to "Cancel", activity_path %>
       </div>
     </div>
 
-    <%= f.hidden_field :lat %>
-    <%= f.hidden_field :long %>
-
-    <% end %>
+  <% end %>
 
   <%= render 'places' %>
 
