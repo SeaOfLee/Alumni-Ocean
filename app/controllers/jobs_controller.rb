@@ -11,7 +11,6 @@ class JobsController < ApplicationController
               {job_type: :word_middle},
               {job_title: :word_middle}
             ]
-      @jobs = Job.order('created_at DESC').paginate(:page => params[:page], :per_page =>10)
     else
       @jobs = Job.all
       @jobs = Job.order('created_at DESC').paginate(:page => params[:page], :per_page =>10)
