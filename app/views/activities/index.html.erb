@@ -5,7 +5,7 @@
     <div class='row clearfix'>
       <div class='column full'>
         <%= form_tag search_activities_path, :class => "search-form", method: :get do %>
-        <%= text_field_tag :search, params[:search], :placeholder => "Look for jobs...", id: "search-input" %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Look for events...", id: "search-input" %>
         <%= submit_tag ("Search"), :id => "search-submit" %>
         <% end %>
       </div>
@@ -19,7 +19,7 @@
 
     <div class='row clearfix'>
       <div class='column full'>
-        <%= link_to "New Event", new_activity_path, class: 'button' %>
+        <%= link_to "Post A New Event", new_activity_path, class: 'button_new' %>
       </div>
     </div>
 

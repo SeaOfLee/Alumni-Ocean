@@ -2,17 +2,37 @@
 
 <div class="main_container">
 
-  <%= form_tag search_activities_path, method: :get do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag("Search") %>
-  <% end %>
+  <div class='row clearfix'>
+    <div class='column full'>
+      <%= form_tag search_activities_path, :class => "search-form", method: :get do %>
+      <%= text_field_tag :search, params[:search], :placeholder => "Look for events...", id: "search-input" %>
+      <%= submit_tag ("Search"), :id => "search-submit" %>
+      <% end %>
+    </div>
+  </div>
 
-  <% @activities.each do |activity| %>
-    <h3><%= link_to activity.event_name, activity %></h3>
-      <p><%= activity.event_location %></p>
-      <p>Posted <%= time_ago_in_words(activity.created_at) %> ago by <%= activity.user.first_name %> <%= activity.user.last_name %></p>
-    <hr />
-  <% end %>
+  <div class='row clearfix'>
+    <div class='column full'>
+      <h1>Events Calendar</h1>
+    </div>
+  </div>
+
+  <div class='row clearfix'>
+    <div class='column full'>
+      <% @activities.each do |activity| %>
+        <h2><%= link_to activity.event_name, activity, class: 'content_title' %></h2>
+        <p><span class='label_black'>Date: </span><%= activity.event_date %><br />
+           <span class='label_black'>Location: </span><%= activity.event_location %></p>
+           <p><span class='post_time'>Posted <%= time_ago_in_words(activity.created_at) %> ago by <%= activity.user.first_name %> <%= activity.user.last_name %></span></p>
+        <hr />
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row clearfix">
+    <div class="column full pagination">
+      <%= will_paginate @activities %>
+    </div>
+  </div>
 
 </div>

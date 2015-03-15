@@ -23,7 +23,7 @@
         <%= image_tag u.avatar.url, class: 'small_profile' %>
       </div>
       <div class="column two-thirds">
-        <h3><%= link_to u.first_name, u %> <%= link_to u.last_name, u %></h3>
+        <h2><%= link_to u.first_name, u, class: 'content_title' %> <%= link_to u.last_name, u, class: 'content_title' %></h2>
         <p><span class='label_black'>Current Location: </span><%= u.current_location %><br>
            <span class='label_black'>Program Attended: </span><%= u.program_attended %><br></p>
         <%= u.bio %>
