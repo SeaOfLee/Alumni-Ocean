@@ -51,6 +51,6 @@ class ActivitiesController < ApplicationController
 
   private
     def activity_params
-      params.require(:activity).permit(:event_name, :event_location, :event_description, :event_site, :event_date, :event_time)
+      params.require(:activity).permit(:event_name, :event_location, :event_description, :event_site, :event_date, :event_time, :lat, :long)
     end
 end
