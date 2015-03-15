@@ -540,6 +540,10 @@ img.icon {
   border-radius: 5px;
 }
 
+.profile_stuff {
+  padding: 1em 0 1em 0;
+}
+
 .meta-info {
   padding-bottom: 2rem;
 }
