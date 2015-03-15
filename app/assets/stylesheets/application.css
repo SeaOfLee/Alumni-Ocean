@@ -521,11 +521,20 @@ img.icon {
   color: #FFFFFF;
 }
 
-/* --- User Index --- */
+/* --- Users --- */
 .small_profile {
   border: 2px solid #969696;
   width: 120px;
   height: 120px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.medium_profile {
+  border: 2px solid #969696;
+  width: 250px;
+  height: 250px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;

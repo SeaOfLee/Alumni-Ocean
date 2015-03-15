@@ -2,32 +2,29 @@
 
   <div class="main_container">
 
-    <h1>Welcome, <%= @user.first_name %>.</h1>
+    <div class='row clearfix'>
+      <div class='column full'>
+        <% if current_user == @user %>
+        <h1>Welcome, <%= @user.first_name %>.</h1>
+        <% else %>
+        <h1>Meet <%= @user.first_name %> <%= @user.last_name %></h1>
+        <% end %>
+      </div>
+    </div>
 
-    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-
-    <div class='profile_details'>
-      Pic: <%= image_tag @user.avatar.url %>
-      <ul>
-        <li>
-          Email: <%= @user.email %>
-        </li>
-        <li>
-          Current Location: <%= @user.current_location %>
-        </li>
-        <li>
-          Program: <%= @user.program_attended %>
-        </li>
-        <li>
-          Campus: <%= @user.campus %>
-        </li>
-        <li>
-          Cohort: <%= @user.cohort %>
-        </li>
-        <li>
-          About Me: <%= @user.bio %>
-        </li>
-      </ul>
+    <div class='row clearfix'>
+      <div class='column third'>
+        <%= image_tag @user.avatar.url, class: 'medium_profile' %>
+      </div>
+      <div class='column two-thirds'>
+        <p><span class='label_black'>Current Location: </span><%= @user.current_location %><br>
+          <span class='label_black'>Program Attended: </span><%= @user.program_attended %><br>
+            <span class='label_black'>Campus: </span><%= @user.campus %><br>
+            <span class='label_black'>Cohort: </span><%= @user.cohort %>
+        </p>
+        <p><%= @user.bio %></p>
+        <p>Contact: <%= mail_to @user.email %></p>
+      </div>
     </div>
 
     <% if current_user == @user %>
