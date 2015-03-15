@@ -2,7 +2,15 @@ class UsersController < ApplicationController
 
   def search
     if params[:search].present?
-      @users = User.search(params[:search])
+      @users = User.search params[:search],
+      fields: [{first_name: :word_middle},
+              {last_name: :word_middle},
+              {email: :word_middle},
+              {program_attended: :word_middle},
+              {campus: :word_middle},
+              {cohort: :word_middle},
+              {bio: :word_middle},
+      ]
     else
       @users = User.all
     end
