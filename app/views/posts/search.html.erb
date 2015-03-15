@@ -2,17 +2,36 @@
 
   <div class="main_container">
 
-    <%= form_tag search_posts_path, method: :get do %>
-      <%= label_tag(:q, "Search for:") %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag("Search") %>
-    <% end %>
+    <div class='row clearfix'>
+      <div class='column full'>
+        <%= form_tag search_posts_path, :class => "search-form", method: :get do %>
+        <%= text_field_tag :search, params[:search], :placeholder => "Look for posts...", id: "search-input" %>
+        <%= submit_tag ("Search"), :id => "search-submit" %>
+        <% end %>
+      </div>
+    </div>
 
-<% @posts.each do |post| %>
-    <h3><%= link_to post.title, post %></h3>
-    <p>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %> <%= post.user.last_name %></p>
-    <p><%= pluralize(post.comments.count, 'reply') %></p>
-    <hr />
-  <% end %>
+    <div class='row clearfix'>
+      <div class='column full'>
+        <h1>Alumni Chatter</h1>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+      <% @posts.each do |post| %>
+        <h2><%= link_to post.title, post, class: 'content_title' %></h2>
+        <p><span class='post_time'>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %> <%= post.user.last_name %></span></p>
+        <p><%= pluralize(post.comments.count, 'reply') %></p>
+        <hr />
+      <% end %>
+      </div>
+    </div>
+
+  <div class="row clearfix">
+    <div class="column full pagination">
+      <%= will_paginate @posts %>
+    </div>
+  </div>
 
 </div>

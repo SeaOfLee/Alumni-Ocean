@@ -2,44 +2,41 @@
 
   <div class="main_container">
 
-    <%= form_tag search_users_path, method: :get do %>
-          <%= label_tag(:q, "Search for:") %>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag("Search") %>
-        <% end %>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Current Location</th>
-          <th>Program Attended</th>
-          <th>Campus</th>
-          <th>Cohort</th>
-          <th>Bio</th>
-          <th colspan="6"></th>
-        </tr>
-      </thead>
+    <div class='row clearfix'>
+          <div class='column full'>
+              <%= form_tag search_users_path, :class => "search-form",  method: :get do %>
+                <%= text_field_tag :search, params[:search], :placeholder => "Look for alumni...", id: "search-input" %>
+                <%= submit_tag ("Search"), :id => "search-submit" %>
+              <% end %>
+            </div>
+        </div>
 
-      <tbody>
-       <tbody>
+        <div class='row clearfix'>
+          <div class='column full'>
+            <h1>GA Alumni</h1>
+          </div>
+        </div>
+
+        <div class="row clearfix profile_deets">
         <% @users.each do |u| %>
-          <tr>
-            <td><%= link_to u.first_name, u %> <%= link_to u.last_name, u %></td>
-            <td><%= u.current_location %></td>
-            <td><%= u.program_attended %></td>
-            <td><%= u.campus %></td>
-            <td><%= u.cohort %></td>
-            <td><%= u.bio %></td>
-            <td><% if u.is_admin == true %><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
-          </tr>
+          <div class="column fifth">
+            <%= image_tag u.avatar.url, class: 'small_profile' %>
+          </div>
+          <div class="column two-thirds">
+            <h2><%= link_to u.first_name, u, class: 'content_title' %> <%= link_to u.last_name, u, class: 'content_title' %></h2>
+            <p><span class='label_black'>Current Location: </span><%= u.current_location %><br>
+               <span class='label_black'>Program Attended: </span><%= u.program_attended %><br></p>
+            <%= u.bio %>
+            <% if u.is_admin == true %><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %><% end %><br>
+            <hr />
+          </div>
         <% end %>
-      </tbody>
-    </table>
+        </div>
 
-    <div class="row clearfix">
-      <div class="column full pagination">
-      <%= will_paginate @users %>
-      </div>
-    </div>
+        <div class="row clearfix">
+          <div class="column full pagination">
+          <%= will_paginate @users %>
+          </div>
+        </div>
 
 </div>
