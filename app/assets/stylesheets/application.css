@@ -544,6 +544,11 @@ img.icon {
   padding: 1em 0 1em 0;
 }
 
+.profile_deets h3 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .meta-info {
   padding-bottom: 2rem;
 }
