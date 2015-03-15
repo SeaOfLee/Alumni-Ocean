@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Event, :type => :model do
+RSpec.describe Activity, :type => :model do
 
 
-  let(:event) { FactoryGirl.create :user }
+  let(:activity) { FactoryGirl.create :user }
 
   describe "validates presence of event_name" do
     it { should validate_presence_of(:event_name) }

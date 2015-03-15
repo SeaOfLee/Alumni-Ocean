@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :posts
   has_many :jobs
-  has_many :events
+  has_many :activities
 
   validates :first_name, :last_name, :password, :password_confirmation, :current_location, :program_attended, :campus, :cohort, :bio, :avatar, :presence => true
 
@@ -13,12 +13,11 @@ class User < ActiveRecord::Base
     errors[:base] << "All fields must be filled out in form."
   end
   # validates_presence_of :last_name
-  # validates_presence_of :email
+  validates_presence_of :email
   # validates_presence_of :password
   validates_uniqueness_of :email
-  validates :email, confirmation: true
   VALID_EMAIL_REGEX = /\A[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z/
-  validates :email, format: { with: VALID_EMAIL_REGEX }
+  validates :email, confirmation: true, format: { with: VALID_EMAIL_REGEX }
 
 
 

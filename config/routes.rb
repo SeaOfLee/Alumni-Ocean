@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :events do
+  resources :activities do
     collection do
       get 'search'
     end

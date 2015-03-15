@@ -28,13 +28,13 @@
 
       <div class="column third">
         <h2>Events</h2>
-          <% @events.each do |event| %>
-            <h3><%= link_to event.event_name, event %></h3>
-            <p><%= event.event_location %></p>
-            <p><span class='post_time'>Posted <%= time_ago_in_words(event.created_at) %> ago by <%= event.user.first_name %> <%= event.user.last_name %></span></p>
+          <% @activities.each do |activity| %>
+            <h3><%= link_to activity.event_name, activity %></h3>
+            <p><%= activity.event_location %></p>
+            <p><span class='post_time'>Posted <%= time_ago_in_words(activity.created_at) %> ago by <%= activity.user.first_name %> <%= activity.user.last_name %></span></p>
             <hr />
           <% end %>
-          <%= link_to "See more Events", events_path %>
+          <%= link_to "See more Events", activities_path %>
       </div>
     </div>
 

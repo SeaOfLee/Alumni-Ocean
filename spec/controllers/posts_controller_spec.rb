@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe PostsController do
   before(:each) do
-    @post1 = Post.create(title: 'title', content: 'this is good content', id: "136")
-    @post2 = Post.create(title: 'title2', content: 'this is even better content', id: "137")
+    @post1 = Post.create(title: 'title', content: 'this is good content', id: "136", user_id: 1,)
+    @post2 = Post.create(title: 'title2', content: 'this is even better content', id: "137", user_id: 1,)
   end
 
   describe "GET #index" do
