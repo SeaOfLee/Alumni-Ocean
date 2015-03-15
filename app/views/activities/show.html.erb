@@ -13,7 +13,7 @@
       <p><span class='label_black'>Date:</span> <%= @activity.event_date.to_formatted_s(:long) %></p>
     </div>
     <div class='column third'>
-      <p><span class='label_black'>Time:</span> <%= @activity.event_time %></p>
+      <p><span class='label_black'>Time:</span> <%= @activity.event_time.to_formatted_s(:time)  %></p>
     </div>
   </div>
 

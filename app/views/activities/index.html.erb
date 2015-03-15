@@ -27,7 +27,7 @@
       <div class='column full'>
         <% @activities.each do |activity| %>
           <h2><%= link_to activity.event_name, activity, class: 'content_title' %></h2>
-          <p><span class='label_black'>Date: </span><%= activity.event_date %><br />
+          <p><span class='label_black'>Date: </span><%= activity.event_date.to_formatted_s(:long) %><br />
              <span class='label_black'>Location: </span><%= activity.event_location %></p>
              <p><span class='post_time'>Posted <%= time_ago_in_words(activity.created_at) %> ago by <%= activity.user.first_name %> <%= activity.user.last_name %></span></p>
           <hr />
