@@ -3,7 +3,14 @@ class JobsController < ApplicationController
 
   def search
     if params[:search].present?
-      @jobs = Job.search(params[:search])
+      @jobs = Job.search params[:search],
+      fields: [{company: :word_middle},
+              {location: :word_middle},
+              {description: :word_middle},
+              {contact: :word_middle},
+              {job_type: :word_middle},
+              {job_title: :word_middle}
+            ]
     else
       @jobs = Job.all
     end

@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  searchkick
+  searchkick word_middle: [:company, :location, :description, :contact, :job_type, :job_title]
   belongs_to :user
 
   validates_presence_of :job_title
