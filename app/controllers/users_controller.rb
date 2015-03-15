@@ -12,7 +12,6 @@ class UsersController < ApplicationController
               {cohort: :word_middle},
               {bio: :word_middle}
       ]
-      @users = User.order('created_at DESC').paginate(:page => params[:page], :per_page => 15)
     else
       @users = User.all
       @users = User.order('created_at DESC').paginate(:page => params[:page], :per_page => 15)

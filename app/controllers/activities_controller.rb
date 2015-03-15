@@ -9,7 +9,6 @@ class ActivitiesController < ApplicationController
               {event_description: :word_middle},
               {event_site: :word_middle},
             ]
-      @activities = Activity.order('created_at DESC').paginate(:page => params[:page], :per_page =>10)
     else
       @activities = Activity.all
       @activities = Activity.order('created_at DESC').paginate(:page => params[:page], :per_page =>10)
