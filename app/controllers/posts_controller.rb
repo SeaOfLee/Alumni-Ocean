@@ -7,8 +7,10 @@ class PostsController < ApplicationController
       fields: [{title: :word_middle},
               {content: :word_middle}
             ]
+      @posts = Post.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
     else
       @posts = Post.all
+      @posts = Post.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
     end
   end
 
