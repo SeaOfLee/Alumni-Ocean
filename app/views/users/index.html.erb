@@ -2,12 +2,21 @@
 
   <div class="main_container">
 
-    <%= form_tag search_users_path, method: :get do %>
+    <div class='row clearfix'>
+      <div class='column full'>
+        <%= form_tag search_users_path, method: :get do %>
           <%= label_tag(:q, "Search for:") %>
           <%= text_field_tag :search, params[:search] %>
           <%= submit_tag("Search") %>
         <% end %>
-    <h1>GA Alumni List</h1>
+      </div>
+    </div>
+
+    <div class='row clearfix'>
+      <div class='column full'>
+        <h1>GA Alumni List</h1>
+      </div>
+    </div>
 
     <div class="row clearfix">
     <% @users.each do |u| %>
@@ -15,11 +24,12 @@
         <%= image_tag u.avatar.url, class: 'small_profile' %>
       </div>
       <div class="column two-thirds">
-        <h3><%= link_to u.first_name, u %> <%= link_to u.last_name, u %></h3><br>
-        <%= u.current_location %><br>
-        <%= u.program_attended %><br>
-        <%= u.bio %><br>
+        <h3><%= link_to u.first_name, u %> <%= link_to u.last_name, u %></h3>
+        <p><span class='label_black'>Current Location: </span><%= u.current_location %><br>
+           <span class='label_black'>Program Attended: </span><%= u.program_attended %><br></p>
+        <%= u.bio %>
         <% if u.is_admin == true %><%= link_to ' Delete', u, method: :delete, data: { confirm: 'Are you sure?' } %><% end %><br>
+        <hr />
       </div>
     <% end %>
     </div>
