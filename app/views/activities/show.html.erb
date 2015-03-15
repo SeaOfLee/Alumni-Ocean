@@ -20,7 +20,7 @@
   <div class='row clearfix'>
     <div class='column full'>
       <p><%= simple_format(@activity.event_description) %></p>
-      <p>For more information, visit: <%= link_to @activity.event_site %></a>.</p>
+      <p>For more information, visit: <%= link_to @activity.event_site, url_for(@activity.event_site), target: "_blank" %>.</p>
     </div>
   </div>
 
