@@ -7,9 +7,10 @@ class UsersController < ApplicationController
               {last_name: :word_middle},
               {email: :word_middle},
               {program_attended: :word_middle},
+              {current_location: :word_middle},
               {campus: :word_middle},
               {cohort: :word_middle},
-              {bio: :word_middle},
+              {bio: :word_middle}
       ]
     else
       @users = User.all
