@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe JobsController do
   before(:each) do
+    controller.stub(:authorize)
     @job1 = Job.create(job_title: "Developer", company: "Google", location: "Santa Monica, CA", job_type: "Remote", contact: "lee@me.com", description: "Who cares, it's Google.")
     @job2 = Job.create(job_title: "Manager", company: "JibJab", location: "Venice, CA", job_type: "Full-Time", contact: "katie@me.com", description: "Elitists only.")
   end

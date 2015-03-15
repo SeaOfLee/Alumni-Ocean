@@ -1,6 +1,6 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
-  searchkick
+  searchkick word_middle: [:first_name, :last_name, :email, :program_attended, :campus, :cohort, :bio]
   has_secure_password
   has_many :comments
   has_many :posts
