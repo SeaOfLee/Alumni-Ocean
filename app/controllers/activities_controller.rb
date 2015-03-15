@@ -3,7 +3,12 @@ class ActivitiesController < ApplicationController
 
   def search
     if params[:search].present?
-      @activities = Activity.search(params[:search])
+      @activities = Activity.search params[:search],
+      fields: [{event_name: :word_middle},
+              {event_location: :word_middle},
+              {event_description: :word_middle},
+              {event_site: :word_middle},
+            ]
     else
       @activities = Activity.all
     end

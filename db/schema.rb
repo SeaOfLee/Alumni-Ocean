@@ -81,9 +81,9 @@ ActiveRecord::Schema.define(version: 20150314230636) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "current_location"
     t.string   "password_salt"
     t.string   "password_hash"
+    t.string   "current_location"
   end
 
   add_foreign_key "comments", "posts"

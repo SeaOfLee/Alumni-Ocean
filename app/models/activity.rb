@@ -1,5 +1,5 @@
 class Activity < ActiveRecord::Base
-  searchkick
+  searchkick word_middle: [:event_name, :event_location, :event_description, :event_site]
   belongs_to :user
 
   validates_presence_of :event_name

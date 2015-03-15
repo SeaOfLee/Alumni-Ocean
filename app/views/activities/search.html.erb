@@ -8,7 +8,7 @@
     <%= submit_tag("Search") %>
   <% end %>
 
-  <% @activities.each do |event| %>
+  <% @activities.each do |activity| %>
     <h3><%= link_to activity.event_name, activity %></h3>
       <p><%= activity.event_location %></p>
       <p>Posted <%= time_ago_in_words(activity.created_at) %> ago by <%= activity.user.first_name %> <%= activity.user.last_name %></p>
