@@ -35,12 +35,13 @@
 
     <div class='row clearfix'>
       <div class='column full'>
-        <%= f.submit 'Post your event', class: 'button'  %>
+        <%= f.submit 'Post your event', class: 'button', id: 'map_button'  %>
       </div>
     </div>
 
     <%= f.hidden_field :lat %>
     <%= f.hidden_field :long %>
+
 
     <% end %>
 
