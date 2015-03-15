@@ -3,7 +3,10 @@ class PostsController < ApplicationController
 
   def search
     if params[:search].present?
-      @posts = Post.search(params[:search])
+      @posts = Post.search params[:search],
+      fields: [{title: :word_middle},
+              {content: :word_middle}
+            ]
     else
       @posts = Post.all
     end

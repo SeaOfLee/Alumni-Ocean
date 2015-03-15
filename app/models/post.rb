@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  searchkick
+  searchkick word_middle: [:title, :content]
   belongs_to :user
   has_many :comments
 
