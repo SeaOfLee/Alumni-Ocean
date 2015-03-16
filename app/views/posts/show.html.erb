@@ -1,35 +1,36 @@
 <%= render 'layouts/sidenav' %>
 
-  <div class="main_container">
+<div class="main_container">
 
-  <h1><%= @post.title %></h1>
-    <p><span class='post_time'>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.first_name %> <%= @post.user.last_name %></span></p>
+  <div class='row clearfix'>
+    <div class='column full'>
+    <h1><%= @post.title %></h1>
+      <h5><%= pluralize(@post.comments.count, 'reply') %></h5>
+      <p><%= simple_format(@post.content) %></p>
+    <div>
+  </div>
 
-    <p><%= simple_format(@post.content) %></p>
+  <div class='row clearfix meta-info'>
+    <hr>
+    <div class='column half'>
+      <span class='post_time'>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.first_name %> <%= @post.user.last_name %></span>
+    </div>
+    <div class='column half'>
+      <span class="edit_delete">
+        <% if current_user == @post.user %>
+          <%= link_to "Edit", edit_post_path(@post) %>
+        <% end %> |
+        <% if current_user == @post.user %>
+          <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this?" }%>
+        <% end %>
+      </span>
+    </div>
+  </div>
 
-    <% if current_user == @post.user %>
-      <%= link_to "Edit", edit_post_path(@post) %>
-    <% end %>
-
-    <% if current_user == @post.user %>
-      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete this?" }%>
-    <% end %>
-
-    <h5><%= pluralize(@post.comments.count, 'reply') %></h4>
       <%= render @post.comments %>
       <h4>Comment on post</h4>
       <%= render 'comments/form' %>
 
       <hr>
-      Current User ID: <%= session["user_id"].inspect %><br>
-      <%= params.inspect %>
-      <br>
-      <% if current_user != nil %>
-      Logged in as: <%= current_user.email %> |
-      <!-- method delete overrides button's normal behavior of POST -->
-        <%= link_to "Log Out", sessions_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign In', new_sessions_path %>
-      <% end %>
 
 </div>
