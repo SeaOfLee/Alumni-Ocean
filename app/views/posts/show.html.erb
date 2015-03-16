@@ -27,10 +27,12 @@
     </div>
   </div>
 
+  <div class='row clearfix'>
+    <div class='column full comments_post'>
       <%= render @post.comments %>
       <h4>Comment on post</h4>
       <%= render 'comments/form' %>
-
-      <hr>
+    </div>
+  </div>
 
 </div>

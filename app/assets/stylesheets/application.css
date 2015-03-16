@@ -665,3 +665,9 @@ img.icon {
   color: #FFFFFF;
   text-decoration: none;
 }
+
+/* --- Comments -- */
+
+.comments_post {
+  font-size: 0.8em
+}
